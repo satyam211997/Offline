@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO App</title>
+  </head>
+  <body>
+    <h1>TODO App</h1>
+    <input type="text" id="taskInput" placeholder="Enter a task" />
+    <button id="addButton">Add Task</button>
+    <ul id="taskList"></ul>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const taskInput = document.getElementById("taskInput");
+        const addButton = document.getElementById("addButton");
+        const taskList = document.getElementById("taskList");
+
+        addButton.addEventListener("click", function () {
+          const taskText = taskInput.value.trim();
+          if (taskText !== "") {
+            const taskItem = document.createElement("li");
+            taskItem.textContent = taskText;
+
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.addEventListener("click", function () {
+              taskItem.remove();
+            });
+
+            taskItem.appendChild(deleteButton);
+            taskList.appendChild(taskItem);
+            taskInput.value = "";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
+<script>
+  const targetList = document.getElementById("taskList");
+
+  const observer = new MutationObserver((mutationsList, observer) => {
+    for (const mutation of mutationsList) {
+      if (mutation.type === "childList") {
+        console.log("List or its subtree changed:", mutation);
+        //   elementChanged()
+        // Do something in response to changes
+      }
+    }
+  });
+
+  function elementChanged() {
+    const list = document.getElementsByClassName("zWGUib");
+
+    for (let i of list) {
+      const uName = i.innerText;
+      console.log(uName);
+    }
+  }
+
+  const observerConfig = { childList: true, subtree: true };
+  observer.observe(targetList, observerConfig);
+</script>

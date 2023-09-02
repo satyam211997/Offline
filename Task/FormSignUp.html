@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      span {
+        display: none;
+      }
+    </style>
+    <form id="main" action="">
+      <label for="firstName">FirstName:</label>
+      <input id="firstName" type="text" placeholder="Enter Your Name" />
+      <span id="firstErr" style="color: red"
+        >error:please enter valid input</span
+      >
+      <br />
+      <label for="MiddleName">MiddleName:</label>
+
+      <input id="middleName" type="text" placeholder="Enter Middle Name" />
+      <span id="middleErr" style="color: red"
+        >error:please enter valid input</span
+      >
+      <br />
+      <label for="LastName">LastName:</label>
+      <input id="lastName" type="text" placeholder="Enter Last Name" />
+      <span id="lastErr" style="color: red">error:please enter valid input</span
+      ><br />
+      <label for="date">date</label>
+      <input id="date" type="date" />
+      <span id="dateErr" style="color: red">error:please enter valid input</span
+      ><br />
+      <label for="password">password</label>
+      <input id="password" type="password" placeholder="enter password" />
+      <span id="passErr" style="color: red">error:please enter valid input</span
+      ><br />
+      <label for="confirmPassword">confirmPassword</label>
+      <input
+        id="confirmPassword"
+        type="confirmPassword"
+        placeholder="enter confirmPassword"
+      />
+      <span id="conPassErr" style="color: red"
+        >error:please enter valid input</span
+      ><br />
+      <label for="Linkdin">Linkdin</label>
+      <input id="Linkdin" type="url" placeholder="Linkdin" />
+      <span id="linkErr" style="color: red">error:please enter valid input</span
+      ><br />
+      <label for="GitHub">GitHub</label>
+      <input id="GitHub" type="url" placeholder="GitHub" />
+      <span id="gitErr" style="color: red">error:please enter valid input</span
+      ><br />
+
+      <button type="submit">submit</button>
+    </form>
+  </body>
+</html>
+<script>
+  let first = document.getElementById("firstName");
+  first.addEventListener("blur", function (e) {
+    const { value, style } = e.target;
+
+    const reguarExp = new RegExp(/^[A-Za-z]+$/);
+
+    const togglespan = document.getElementById("firstErr");
+    if (!reguarExp.test(value)) {
+      style.border = "2px solid red";
+      togglespan.style.display = "block";
+    } else {
+      togglespan.style.display = "none";
+      style.border = "2px solid blue";
+    }
+  });
+  let middle = document.getElementById("middleName");
+  middle.addEventListener("blur", function (e) {
+    const { value, style } = e.target;
+
+    const reguarExp = new RegExp(/^[A-Za-z]+$/);
+    const togglespan = document.getElementById("middleErr");
+
+    if (!reguarExp.test(value)) {
+      style.border = "2px solid red";
+      togglespan.style.display = "block";
+    } else {
+      togglespan.style.display = "none";
+      style.border = "2px solid blue";
+    }
+  });
+  let last = document.getElementById("lastName");
+  last.addEventListener("blur", function (e) {
+    const { value, style } = e.target;
+
+    const reguarExp2 = new RegExp(/^[A-Za-z]+$/);
+    const togglespan = document.getElementById("lastErr");
+
+    if (!reguarExp2.test(value)) {
+      style.border = "2px solid red";
+      togglespan.style.display = "block";
+    } else {
+      togglespan.style.display = "none";
+      style.border = "2px solid blue";
+    }
+  });
+
+  let date = document.getElementById("date");
+  date.addEventListener("input", function (e) {
+    const { value, style } = e.target;
+    const currentDate = new Date();
+    const inputVal = new Date(date.value);
+    if (inputVal > currentDate) {
+      let dateErr = document.getElementById("dateErr");
+      dateErr.style.display = "block";
+    } else {
+      dateErr.style.display = "none";
+      style.border = "2px solid blue";
+    }
+  });
+
+  let password = document.getElementById("password");
+  password.addEventListener("blur", function (e) {
+    const { value, style } = e.target;
+    console.log(password.value);
+
+    const reguarPass = new RegExp(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/);
+    const togglespan = document.getElementById("passErr");
+
+    if (!reguarPass.test(value)) {
+      style.border = "2px solid red";
+      togglespan.style.display = "block";
+    } else {
+      togglespan.style.display = "none";
+      style.border = "2px solid blue";
+    }
+  });
+  let confirmPassword = document.getElementById("confirmPassword");
+  confirmPassword.addEventListener("blur", function (e) {
+    const { value, style } = e.target;
+
+    const reguarPass = new RegExp(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/);
+    const togglespan = document.getElementById("conPassErr");
+
+    if (!reguarPass.test(value)) {
+      style.border = "2px solid red";
+      togglespan.style.display = "block";
+    } else {
+      togglespan.style.display = "none";
+      style.border = "2px solid blue";
+    }
+  });
+  let Linkdin = document.getElementById("Linkdin");
+  Linkdin.addEventListener("blur", function (e) {
+    const { value, style } = e.target;
+
+    const reguarUrl = new RegExp(/^(http|https):\/\/([\w.]+\/?)\S*$/);
+    const togglespan = document.getElementById("linkErr");
+
+    if (!reguarUrl.test(value)) {
+      style.border = "2px solid red";
+      togglespan.style.display = "block";
+    } else {
+      togglespan.style.display = "none";
+      style.border = "2px solid blue";
+    }
+  });
+  let GitHub = document.getElementById("GitHub");
+  GitHub.addEventListener("blur", function (e) {
+    const { value, style } = e.target;
+
+    const reguarUrl = new RegExp(/^(http|https):\/\/([\w.]+\/?)\S*$/);
+    const togglespan = document.getElementById("gitErr");
+
+    if (!reguarUrl.test(value)) {
+      style.border = "2px solid red";
+      togglespan.style.display = "block";
+    } else {
+      togglespan.style.display = "none";
+      style.border = "2px solid blue";
+    }
+  });
+  let main = document.getElementById("main");
+  main.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (first.value.length === 0) {
+      const togglespan = document.getElementById("firstErr");
+      togglespan.style.border = "2px solid red";
+      togglespan.style.display = "block";
+    }
+    if (middle.value.length === 0) {
+      const togglespan = document.getElementById("middleErr");
+      togglespan.style.border = "2px solid red";
+      togglespan.style.display = "block";
+    }
+    if (date.value.length === 0) {
+      const togglespan = document.getElementById("dateErr");
+      togglespan.style.border = "2px solid red";
+      togglespan.style.display = "block";
+    }
+    if (password.value.length === 0) {
+      const togglespan = document.getElementById("passErr");
+      togglespan.style.border = "2px solid red";
+      togglespan.style.display = "block";
+    }
+    if (confirmPassword.value.length === 0) {
+      const togglespan = document.getElementById("conPassErr");
+      togglespan.style.border = "2px solid red";
+      togglespan.style.display = "block";
+    }
+    if (first.value.length === 0) {
+      const togglespan = document.getElementById("firstErr");
+      togglespan.style.border = "2px solid red";
+      togglespan.style.display = "block";
+    }
+    if (Linkdin.value.length === 0) {
+      const togglespan = document.getElementById("linkErr");
+      togglespan.style.border = "2px solid red";
+      togglespan.style.display = "block";
+    }
+    if (GitHub.value.length === 0) {
+      const togglespan = document.getElementById("gitErr");
+      togglespan.style.border = "2px solid red";
+      togglespan.style.display = "block";
+    }
+  });
+</script>

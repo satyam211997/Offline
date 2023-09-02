@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>MyTodo</h2>
+    <input id="todoTitle" type="text" />
+    <button id="addTodo">AddTodo</button>
+  </body>
+</html>
+<script>
+  let todoElem = document.getElementById("todoTitle");
+  let btnTodo = document.getElementById("addTodo");
+
+  btnTodo.addEventListener("click", () => {
+    const todoTitleText = todoElem.value;
+    console.log("val", todoTitleText);
+    // if (!todoTitleText) {
+    //   alert("please add tittle");
+    //   return;
+    // }
+    const todoList = document.createElement("li");
+    todoList.innerText = todoTitleText;
+    // console.log(todoList.innerText);
+    document.body.appendChild(todoList);
+    todoElem.value = "";
+  });
+</script>

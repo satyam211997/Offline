@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>SignUp</h1>
+    <form action="">
+      <label for="FirstName">FirstName:</label>
+      <input id="FirstName" type="text" placeholder="FirstName" /><br />
+      <label for="MiddleName">MiddleName:</label>
+      <input id="MiddleName" type="text" placeholder="MiddleName" /><br />
+      <label for="LastName">LastName:</label>
+      <input id="LastName" type="text" placeholder="LastName" /><br />
+      <label for="Email">Email:</label>
+      <input id="Email" type="email" placeholder="Email" /><br />
+      <label for="DOB">DOB:</label>
+      <input id="DOB" type="date" placeholder="Date" /><br />
+      <label for="password">password:</label>
+      <input
+        id="password"
+        type="password"
+        placeholder="password"
+        size="8"
+      /><br />
+      <label for="confirmPassword">confirmPassword:</label>
+      <input
+        id="confirmPassword"
+        type="password"
+        placeholder="confirmPassword"
+        size="8"
+      /><br />
+      <label for="GitHub">GitHub:</label>
+      <input id="GitHub" type="url" placeholder="GitHub" /><br />
+      <label for="Linkdin">Linkdin:</label>
+      <input id="Linkdin" type="url" placeholder="Linkdin" /><br />
+      <button onclick=" return Validate();" type="submit">Submit</button>
+    </form>
+  </body>
+</html>
+<script>
+  function Validate() {
+    const first = document.getElementById("FirstName").value;
+    let middle = document.getElementById("MiddleName").value;
+    let last = document.getElementById("LastName").value;
+
+    const xname = /^[a-zA-Z\s]+$/;
+    if (!xname.test(first)) {
+      alert("please enter valid");
+    } else {
+      true;
+    }
+  }
+</script>
