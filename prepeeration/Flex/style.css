@@ -1,0 +1,27 @@
+.main{
+          background-color: indianred;
+          display: flex;
+          /* flex-direction: row-reverse; */
+          justify-content: space-between;
+          height: 400px;
+
+}
+.child{
+          background-color: rgb(179, 245, 204);
+          width: 100px;
+          margin: 20px;
+          padding: 20px;
+          /* text-align: center; */
+         
+
+}
+#one{
+          order: 2;
+          flex-grow: 5;
+}
+#two{
+          order: 3;
+          flex-grow: 2;}
+/* #three{
+          order: 1;
+          flex-grow: 1;} */

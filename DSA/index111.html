@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  let queue = [];
+  let currentSize = queue.length;
+  let maxSize = 10;
+  function enqueue(val) {
+    if (currentSize < maxSize) {
+      queue.push(val);
+      currentSize = queue.length;
+    } else {
+      console.log("queue is full");
+    }
+    return queue;
+  }
+
+  console.log(enqueue(1));
+  console.log(enqueue(1));
+  console.log(enqueue(1));
+  console.log(enqueue(1));
+  console.log(enqueue(1));
+  console.log(enqueue(1));
+  console.log(enqueue(1));
+  console.log(enqueue(1));
+  console.log(enqueue(1));
+  console.log(enqueue(1));
+  console.log(enqueue(1));
+
+
+  
+</script>

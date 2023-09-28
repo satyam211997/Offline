@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="header">
+        <ul class="header-list">
+          <li class="footer-list-item para">Home Top</li>
+          <li class="footer-list-item para">About Top</li>
+          <li class="footer-list-item para">Contact Top</li>
+        </ul>
+      </div>
+      <section>
+        <div>
+          <div>
+            <div>
+              <div>
+                <p class="para para1 para2" id="sym">Hello para from nested</p>
+                <p class="satyam">Hello Satyam</p>
+              </div>
+            </div>
+            <p class="para">Hello para from nested 2</p>
+            <p class="para">Hello para from nested 3</p>
+            <p class="para">Hello para from nested 4</p>
+            <p class="para">Hello para from nested 5</p>
+          </div>
+        </div>
+      </section>
+      <div id="footer">
+        <ul class="footer-list">
+          <li class="footer-list-item">Home</li>
+          <li class="footer-list-item">About</li>
+          <li class="footer-list-item">Contact</li>
+        </ul>
+      </div>
+    </div>
+    <div class="hello">Hello</div>
+  </body>
+</html>
+
+<script>
+  /*  const paraElems = document.getElementsByClassName("para");
+  console.log("paraElems: ", paraElems);
+
+  for (let item of paraElems) {
+    item.style.color = "red";
+  } */
+
+  function getCustomElementsByClassName(classKey) {
+    let x = document.body.children;
+
+    let blank = [];
+    function recursion(x) {
+      for (let i = 0; i < x.length; i++) {
+        if (x[i].classList.contains(classKey)) {
+          blank.push(x[i]);
+        }
+        if (x[i].children.length > 0) {
+          recursion(x[i].children);
+        }
+      }
+    }
+    recursion(x);
+    return blank;
+  }
+
+  // const list = getCustomElementsByClassName("container");
+  console.log(getCustomElementsByClassName("footer-list-item"));
+</script>

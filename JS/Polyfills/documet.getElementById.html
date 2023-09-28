@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="s">
+      <div id="m">
+        1
+        <div>
+          <div id="xyz">hello sir</div>
+        </div>
+      </div>
+    </div>
+    <div id="my">12</div>
+    <div id="y">12</div>
+    <div id="raja">123</div>
+  </body>
+</html>
+<script>
+  // function getId(id) {
+  //   let x = document.body.children;
+  //   let blank = "";
+  //   for (let i = 0; i < x.length - 1; i++) {
+  //     if (x[i].id === id) {
+  //       // console.log(x[i].innerHTML);
+  //       blank = x[i].innerHTML;
+  //     }
+  //   }
+
+  //   return blank;
+  // }
+  // console.log(getId("raja"));
+  //////////////////////
+
+  /////////////////by Ankit Bhai
+
+  // function getId(id) {
+  //   let x = document.body.children;
+  //   function recursion(x) {
+  //     for (let i = 0; i < x.length; i++) {
+  //       if (x[i].id === id) {
+  //         // blank = x[i];
+  //         return x[i];
+  //       }
+  //       if (x[i].children.length > 0) {
+  //         const result = recursion(x[i].children);
+  //         if (result) {
+  //           return result;
+  //         }
+  //       }
+  //     }
+  //   }
+  //   return recursion(x);
+  // }
+  // console.log(getId("xyz"));
+
+  ////////////////
+
+  function getId(id) {
+    let x = document.body.children;
+    let blank = "";
+    function recursion(x) {
+      for (let i = 0; i < x.length; i++) {
+        if (x[i].id === id) {
+          blank = x[i];
+        }
+        if (x[i].children.length > 0) {
+          return recursion(x[i].children);
+        }
+      }
+    }
+    recursion(x);
+    return blank;
+  }
+  console.log(getId("xyz"));
+</script>

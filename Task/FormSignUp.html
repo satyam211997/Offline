@@ -11,7 +11,7 @@
         display: none;
       }
     </style>
-    <form id="main" action="">
+    <form id="contactForm" action="">
       <label for="firstName">FirstName:</label>
       <input id="firstName" type="text" placeholder="Enter Your Name" />
       <span id="firstErr" style="color: red"
@@ -62,7 +62,7 @@
 <script>
   let first = document.getElementById("firstName");
   first.addEventListener("blur", function (e) {
-    const { value, style } = e.target;
+    const { value, style } = e.target; 
 
     const reguarExp = new RegExp(/^[A-Za-z]+$/);
 
@@ -181,7 +181,7 @@
       style.border = "2px solid blue";
     }
   });
-  let main = document.getElementById("main");
+  let main = document.getElementById("contactForm");
   main.addEventListener("submit", function (e) {
     e.preventDefault();
     if (first.value.length === 0) {
@@ -224,5 +224,11 @@
       togglespan.style.border = "2px solid red";
       togglespan.style.display = "block";
     }
+
+    // store in firebase
+
+    // redirect to login
+
+    // window.location
   });
 </script>

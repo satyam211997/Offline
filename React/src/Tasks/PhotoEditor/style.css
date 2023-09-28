@@ -1,0 +1,12 @@
+.btn {
+  height: 60px;
+}
+.fil {
+  width: 100px;
+  height: 500px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-around;
+}
