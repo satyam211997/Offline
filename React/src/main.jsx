@@ -8,6 +8,7 @@ import ProductDetails from "./4Oct-RoutingV2-PathParams/productDeatails";
 import QueryExample from "./6Oct-queryParams/examplQuery";
 import FetchProducts from "./Async/product";
 import AfterTimeProductLoad from "./Tasks/AfterTimeProductLoad";
+import ParentD from "./Day23-PropDrilling/parent";
 
 // import "./index.css";
 
@@ -56,7 +57,7 @@ const router = createBrowserRouter([
   //   { path: "/about", element: <About /> },
   //   { path: "/", element: <ProductList /> },
   //   { path: "/:productDetails/:productId", element: <ProductDetails /> },
-  { path: "/", element: <AfterTimeProductLoad /> },
+  { path: "/", element: <ParentD /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
