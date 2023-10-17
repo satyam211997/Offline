@@ -9,6 +9,7 @@ import QueryExample from "./6Oct-queryParams/examplQuery";
 import FetchProducts from "./Async/product";
 import AfterTimeProductLoad from "./Tasks/AfterTimeProductLoad";
 import ParentD from "./Day23-PropDrilling/parent";
+import Parent from "./Day23ContextApi/Parent";
 
 // import "./index.css";
 
@@ -51,15 +52,17 @@ import ParentD from "./Day23-PropDrilling/parent";
 // import CallBack from "./useCallBack/CallBack";
 /////////////////////////
 ////routing
-const router = createBrowserRouter([
-  //   { path: "/", element: <Home /> },
-  //   { path: "/contact", element: <Contact /> },
-  //   { path: "/about", element: <About /> },
-  //   { path: "/", element: <ProductList /> },
-  //   { path: "/:productDetails/:productId", element: <ProductDetails /> },
-  { path: "/", element: <ParentD /> },
-]);
-
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
-);
+// const router = createBrowserRouter([
+//   //   { path: "/", element: <Home /> },
+//   //   { path: "/contact", element: <Contact /> },
+//   //   { path: "/about", element: <About /> },
+//   //   { path: "/", element: <ProductList /> },
+//   //   { path: "/:productDetails/:productId", element: <ProductDetails /> },
+//   { path: "/", element: <ParentD /> },
+// ]);
+///////////////////////
+// ReactDOM.createRoot(document.getElementById("root")).render(
+//   <RouterProvider router={router} />
+// );
+////////////////
+ReactDOM.createRoot(document.getElementById("root")).render(<Parent />);
