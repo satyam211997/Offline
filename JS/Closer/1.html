@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //   function counter() {
+  //     let sum = 0;
+  //     return function tryme1(a) {
+  //       sum += a;
+  //       return sum;
+  //     };
+  //   }
+  //   const addCounter = counter();
+  //   console.log(addCounter(2));
+  //   console.log(addCounter(4));
+
+  //   console.log(addCounter(6));
+
+  ///////////////////
+
+  //   function parent() {
+  //     let a = 10;
+  //     let b = 20;
+  //     function child() {
+  //       let a = 30;
+  //       let b = 20;
+  //       console.log(a, b);
+  //       function child1() {
+  //         let a = "satyam";
+  //         let b = true;
+  //         console.log(a, b);
+  //       }
+  //       let x = child1();
+  //     }
+  //     let y = child();
+  //   }
+  //   parent();
+
+  //   function counter() {
+  //     let mult = 1;
+  //     return function multiply(a) {
+  //       mult *= a;
+  //       return mult;
+  //     };
+  //   }
+  //   let x = counter();
+  //   console.log(x(10));
+  //   console.log(x(8));
+  //   console.log(x(7));
+  //////////////
+  function Parent() {
+    let arr = [];
+    return function Child(a) {
+      arr.push(a);
+      return arr;
+    };
+  }
+  let x = Parent();
+  console.log(x(2));
+  console.log(x(8));
+  console.log(x(2));
+</script>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //   function tryMe(...args) {
+  //     console.log(this, args);
+  //   }
+  //   let obj = {
+  //     name: "Satyam",
+  //     city: "JBP",
+  //   };
+
+  //   tryMe.call(obj, 1, 2, 5);
+  //   //   let y = tryMe.bind(obj);
+  //   let x = tryMe.apply(obj, [true, false]);
+
+  ////////
+  //   const tryMe = () => {
+  //     console.log(this);
+  //   };
+  //   let obj = {
+  //     name: "Satyam",
+  //     city: "JBP",
+  //   };
+  //   tryMe.call(obj);
+  //////////
+
+  //   var status = "😎";
+
+  //   setTimeout(() => {
+  //     const status = "😍";
+
+  //     const data = {
+  //       status: "🥑",
+  //       getStatus() {
+  //         return this.status;
+  //       },
+  //     };
+
+  //     console.log(data.getStatus());
+  //     console.log(data.getStatus.call(this));
+  //   }, 0);
+
+  ///////
+
+  //   var car = {
+  //     registrationNumber: "GA12345",
+  //     brand: "Toyota",
+
+  //     displayDetails: function () {
+  //       console.log(this.registrationNumber + " " + this.brand);
+  //     },
+  //   };
+  //   car.displayDetails();
+
+  ///////
+  //   function sayHello() {
+  //     console.log(`Hello, ${this.name}!`);
+  //   }
+
+  //   const person = { name: "Alice" };
+  //   const greet = sayHello.bind(person);
+  //   greet();
+  //
+  function introduce(lang1, lang2) {
+    console.log(`I can speak ${lang1} and ${lang2}. My name is ${this.name}.`);
+  }
+
+  const speaker = { name: "John" };
+  introduce.call(speaker, "English", "Spanish");
+</script>

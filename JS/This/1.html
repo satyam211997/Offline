@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //   console.log(this);
+  let a = 10;
+  var b = 20;
+  console.log(this.b);
+  function tryMe() {
+    let b = 50;
+    console.log(this.a);
+  }
+  tryMe();
+  var d = 10;
+  const tryMe2 = () => {
+    console.log(d);
+  };
+  tryMe2();
+</script>

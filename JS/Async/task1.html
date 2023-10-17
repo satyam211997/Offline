@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" conelevent="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  let p1 = new Promise((resolve, reject) => {
+    resolve("Job");
+  });
+  let p2 = new Promise((resolve, reject) => {
+    resolve("Music");
+  });
+  let p3 = new Promise((resolve, reject) => {
+    resolve("Ghummi");
+  });
+  let p4 = new Promise((resolve, reject) => {
+    resolve("Business");
+  });
+  let p5 = new Promise((resolve, reject) => {
+    resolve("Nothing");
+  });
+  let one = Promise.allSettled([p1, p2, p3, p4]);
+
+  let sawDream = new Promise((resolve, reject) => {
+    resolve("sawed dream");
+  });
+  let thoughtOnDream = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("think");
+    }, 3000);
+  });
+  let discusFriend = new Promise((resolve, reject) => {
+    reject("fun");
+  });
+  let bouncedBack = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("im bounced Back");
+    }, 10000);
+  });
+
+  let f1 = new Promise((resolve, reject) => {
+    reject("nii hoga terese");
+  });
+  let f2 = new Promise((resolve, reject) => {
+    reject("nii hoga terese");
+  });
+  let f3 = new Promise((resolve, reject) => {
+    reject("nii hoga terese");
+  });
+
+  let frient3Talk = Promise.any([f1, f2, f3]);
+
+  let disappointed = new Promise((resolve, reject) => {
+    resolve(" DisAppointed");
+  });
+  let jobApply = new Promise((resolve, reject) => {
+    resolve("Job Apply");
+  });
+  let selected = new Promise((resolve, reject) => {
+    resolve(
+      " Informed All As Im Selected and So happy, And all peoples Appreciate "
+    );
+  });
+
+  let StartUpDecide = new Promise((resolve, reject) => {
+    resolve("im decide to StartUp and TAlking to family about it");
+  });
+  let reject1 = new Promise((resolve, reject) => {
+    reject("no  StartUp by Family");
+  });
+  let reject2 = new Promise((resolve, reject) => {
+    reject("no  StartUp by Family");
+  });
+  let reject3 = new Promise((resolve, reject) => {
+    reject("no  StartUp by Family");
+  });
+  let rejectByFamily = Promise.any([reject1, reject2, reject3]);
+
+  let StartupStart = new Promise((resolve, reject) => {
+    resolve(" m to StartUp Krung");
+  });
+  let s1 = new Promise((resolve, reject) => {
+    reject("Fail in startUP");
+  });
+  let s2 = new Promise((resolve, reject) => {
+    reject("Fail in startUP");
+  });
+  let s3 = new Promise((resolve, reject) => {
+    reject("Fail in startUP");
+  });
+  let s4 = new Promise((resolve, reject) => {
+    reject("Fail in startUP");
+  });
+  let s5 = new Promise((resolve, reject) => {
+    reject("Fail in startUP");
+  });
+  let s6 = new Promise((resolve, reject) => {
+    reject("Fail in startUP");
+  });
+  let s7 = new Promise((resolve, reject) => {
+    resolve("fail 6 StartUp, 7th StartUp  successfull");
+  });
+  let chlGya = Promise.any([s1, s2, s3, s4, s5, s6, s7]);
+
+  let last = new Promise((resolve, reject) => {
+    resolve("People Stopped Saying Anything MAst Life Enjoy");
+  });
+
+  let getData = async () => {
+    let doingAmnything = await one.catch((err) => console.log(err));
+    console.log(doingAmnything, "Doing 5 Task");
+    let sawDream1 = await sawDream;
+    console.log(sawDream1);
+    const thoughtAboutDream = await thoughtOnDream;
+    console.log(thoughtAboutDream);
+    const discussdreamWithFriend = await discusFriend.catch((err) => null);
+    if (!discussdreamWithFriend) {
+      console.log("Friends rejected");
+    }
+
+    //     console.log(four);
+    const bounceBackToHome = await bouncedBack;
+    console.log(bounceBackToHome);
+    const TalkAnotherThreeFriends = await frient3Talk.catch((err) => null);
+    if (!TalkAnotherThreeFriends) {
+      console.log("3 friend ni hoga terese");
+    }
+
+    const DisapointedWithFreinds = await disappointed;
+    console.log(DisapointedWithFreinds);
+    const ApplyForJob = await jobApply;
+    console.log(ApplyForJob);
+    const SelectedInob = await selected;
+    console.log(SelectedInob);
+    const TakeStartUpDecission = await StartUpDecide;
+    console.log(TakeStartUpDecission);
+    const familyRejectionForStartUp = await rejectByFamily.catch((err) => null);
+    if (!familyRejectionForStartUp) {
+      console.log("Na beta");
+    }
+
+    const StartUpStartFinally = await StartupStart;
+    console.log(StartUpStartFinally);
+    const LAstEnjoyPhase = await last;
+    console.log(LAstEnjoyPhase);
+    //     console.log(eleven);
+  };
+  getData();
+
+  /////by .then.catch()
+  //   one
+  //     .then((data) => {
+  //       console.log("Doing 5 tasks");
+  //       return sawDream
+  //         .then((data) => {
+  //           console.log(data, "Saw dream");
+  //           return thoughtOnDream
+  //             .then((data) => {
+  //               console.log(data, "thoughtOnDream");
+  //               return discusFriend
+  //                 .then((data) => {
+  //                   console.log(data, "fun");
+  //                   return bouncedBack;
+  //                 })
+  //                 .catch((err) => {
+  //                   console.log("funErr", err);
+  //                   return bouncedBack;
+  //                 })
+  //                 .then((data) => {
+  //                   console.log(data);
+  //                   return frient3Talk;
+  //                 })
+  //                 .then((data) => {
+  //                   console.log("datt", data);
+  //                   return disappointed;
+  //                 })
+  //                 .catch((err) => {
+  //                   console.log(err, "datt");
+  //                   return disappointed;
+  //                 })
+  //                 .then((data) => {
+  //                   console.log(data);
+  //                   return jobApply;
+  //                 })
+  //                 .then((data) => {
+  //                   console.log(data);
+  //                   return selected;
+  //                 })
+  //                 .then((data) => {
+  //                   console.log(data);
+  //                   return StartUpDecide;
+  //                 })
+  //                 .then((data) => {
+  //                   console.log(data);
+  //                   return rejectByFamily;
+  //                 })
+  //                 .then((data) => {
+  //                   console.log(data);
+  //                   return StartupStart;
+  //                 })
+  //                 .catch((err) => {
+  //                   console.log(err);
+  //                   return StartupStart;
+  //                 })
+  //                 .then((data) => {
+  //                   console.log(data);
+  //                   return chlGya;
+  //                 })
+  //                 .then((data) => {
+  //                   console.log(data);
+  //                   return last;
+  //                 })
+  //                 .then((data) => {
+  //                   console.log(data);
+  //                 })
+  //                 .catch((err) => console.log(err))
+  //                 .catch((err) => {
+  //                   console.log(err);
+  //                 })
+  //                 .catch((err) => {
+  //                   console.log(err);
+  //                 })
+  //                 .catch((err) => console.log(err))
+  //                 .catch((err) => console.log(err))
+  //                 .catch((err) => console.log(err))
+  //                 .catch((err) => console.log(err));
+  //             })
+  //             .catch((err) => {
+  //               console.log(err);
+  //             });
+  //         })
+  //         .catch((err) => {
+  //           console.log(err);
+  //         });
+  //     })
+  //     .catch((err) => console.log(err));
+</script>

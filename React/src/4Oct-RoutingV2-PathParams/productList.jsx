@@ -15,7 +15,7 @@ const ProductList = () => {
   return (
     <>
       <h1>My Products</h1>
-      <ul style={{ gap: 10 }}>
+      <ul>
         {productList.map((item) => {
           return (
             <Link key={item.id} to={`/productDetails/${item.id}`}>

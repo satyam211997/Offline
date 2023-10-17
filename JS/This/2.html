@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //   var x = 10;
+  //   function grand() {
+  //     const parent = () => {
+  //       let x = 40;
+  //       const child = () => {
+  //         console.log(this.x);
+  //         //         console.log(x, "x");
+  //       };
+  //       child();
+  //     };
+  //     parent();
+  //   }
+  //   let y = grand.bind({ x: 800 });
+  //   y();
+
+  //   //   grand.call({ x: 100 });
+  /////////////
+  let obj = {
+    name: "Satyam",
+    city: "jbp",
+    getDetails: function () {
+      //       return this;
+      function add() {
+        console.log(this, "addInner");
+      }
+      add();
+    },
+  };
+  console.log(obj.getDetails());
+</script>
